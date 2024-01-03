@@ -1,0 +1,56 @@
+/* style.css */
+body {
+  height: 100vh; /*100% of the viewport height*/
+  margin: 0;
+  overflow: scroll;
+  font-family: Roboto, sans-serif; 
+  
+  display: flex;
+  flex-direction: column;
+}
+
+/* hero header */
+.header, .footer {
+  font-size: 18px;
+  color: #E5E7EB;
+  padding: 8px 48px;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header {
+  background: #423b0b;
+  padding-bottom: 50px;
+}
+
+.body {
+  color: #423b0b;
+  background-color: #98cbb4;
+  font-weight: 700;
+  padding: 24px 64px 64px;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* this selector selects all divs inside of .flex-container */
+#pixel {
+  height: 5vh;
+  width: 5vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #7ba098;
+}
+
+/* footer */
+.footer {
+  background: #474935;
+  display: flex;
+  justify-content: center;
+}
