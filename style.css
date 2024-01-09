@@ -1,4 +1,8 @@
 /* style.css */
+* {
+  justify-content: center;
+}
+
 body {
   height: 100vh; /*100% of the viewport height*/
   margin: 0;
@@ -9,48 +13,55 @@ body {
   flex-direction: column;
 }
 
-/* hero header */
+h1 {
+  color: #ec9573;
+}
+
+button {
+  background: #ec9573;
+  color: #f9faf8;
+  border-color: #ffbe98;
+  border-radius: 5px;
+  margin: 8px 0;
+  padding: 5px 16px;
+  font-size: large;
+}
+
 .header, .footer {
   font-size: 18px;
   color: #E5E7EB;
   padding: 8px 48px;
   
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
   background: #423b0b;
-  padding-bottom: 50px;
 }
 
 .body {
-  color: #423b0b;
+  color: #a6f3cc;
   background-color: #98cbb4;
   font-weight: 700;
   padding: 24px 64px 64px;
 }
 
-#container {
+#header, #body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
-/* this selector selects all divs inside of .flex-container */
-#pixel {
-  height: 5vh;
-  width: 5vh;
-  justify-content: center;
+.pixel {
   align-items: center;
   background-color: #7ba098;
+  border-color:#423b0b;
 }
 
 /* footer */
 .footer {
   background: #474935;
   display: flex;
-  justify-content: center;
 }

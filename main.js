@@ -1,20 +1,44 @@
-const container = document.querySelector('#container');
+const header = document.querySelector('#header');
+const btn = document.querySelector('button')
 
-for (i=0; i<16; i++) {
-  const col = document.createElement('div');
-  for (j=0; j<16; j++) {
-    const div = document.createElement('div');
-    div.id = 'pixel'
-    col.appendChild(div);
+displayGrid(16);
+
+btn.addEventListener('click', () => {
+  let gridSize = parseInt(prompt('Enter grid size 1-100:'));
+
+  if (isNaN(gridSize) || (gridSize > 100) || (gridSize < 0)) {
+    header.textContent = 'Invalid grid size'
+  } else {
+    header.textContent = 'Grid Size: ' + gridSize + 'x' + gridSize
+    displayGrid(gridSize)
   }
-  container.appendChild(col);
-}
-
-
-const pixels = document.querySelectorAll('div#pixel');
-
-pixels.forEach(function(pixel) {
-  pixel.addEventListener('mouseover', function() {
-    pixel.style.backgroundColor = '#a6f3cc';
-  });
 });
+
+function displayGrid(size) {
+  const body = document.querySelector('#body');
+  const elem = window.innerWidth * .70 / size
+
+  //remove current grid
+  while (body.firstChild) body.removeChild(body.firstChild);
+  
+  //create new grid
+  for (i=0; i<size; i++) {
+    const col = document.createElement('div');
+    for (j=0; j<size; j++) {
+      const div = document.createElement('div');
+      div.className = 'pixel';
+      div.style.width = `${elem}px`;
+      div.style.height = `${elem}px`;
+      col.appendChild(div);
+    }
+    body.appendChild(col);
+  }
+
+  const pixels = document.querySelectorAll('.pixel');
+
+  pixels.forEach(function(pixel) {
+    pixel.addEventListener('mouseover', function() {
+      pixel.style.backgroundColor = '#a6f3cc';
+    });
+  });
+}
