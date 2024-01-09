@@ -16,7 +16,8 @@ btn.addEventListener('click', () => {
 
 function displayGrid(size) {
   const body = document.querySelector('#body');
-  const elem = document.documentElement.clientWidth * .70 / size
+  const side = Math.min(document.documentElement.clientWidth, document.documentElement.clientHeight) * .70;
+  const elem = side / size;
 
   //remove current grid
   while (body.firstChild) body.removeChild(body.firstChild);
