@@ -39,7 +39,14 @@ function displayGrid(size) {
 
   pixels.forEach(function(pixel) {
     pixel.addEventListener('mouseover', function() {
-      pixel.style.backgroundColor = '#a6f3cc';
+      pixel.style.backgroundColor = '#a6f3cc'; //getRandomColor();
     });
   });
 }
+
+/*
+function getRandomColor() {
+  var hex = Math.floor(Math.random() * 0xFFFFFF);
+  return '#' + hex.toString(16);
+}
+*/
